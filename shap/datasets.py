@@ -66,7 +66,7 @@ def imdb(display=False): # pylint: disable=unused-argument
 
     with open(cache(github_data_url + "imdb_train.txt")) as f:
         data = f.readlines()
-    y = np.ones(25000, dtype=np.bool)
+    y = np.ones(25000, dtype=np.bool_)
     y[:12500] = 0
     return data, y
 

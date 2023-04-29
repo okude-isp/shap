@@ -288,7 +288,7 @@ def _convert_delta_mask_to_full(masks, full_masks):
             full_masks[i,masks[masks_pos]] = ~full_masks[i,masks[masks_pos]]
         masks_pos += 1
 
-#@jit # TODO: figure out how to jit this function, or most of it
+#@jit(nopython=True) # TODO: figure out how to jit this function, or most of it
 def _build_delta_masked_inputs(masks, batch_positions, num_mask_samples, num_varying_rows, delta_indexes,
                                varying_rows, args, masker, variants, variants_column_sums):
     all_masked_inputs = [[] for a in args]
